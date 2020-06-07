@@ -1,0 +1,22 @@
+.loader {
+	@include flex(center, center);
+	img {
+		height: 5rem;
+		width: 5rem;
+
+		animation-name: loaderAnim;
+		animation-duration: 1400ms;
+		animation-timing-function: cubic-bezier(0.55, 0.06, 0.68, 0.19);
+		animation-iteration-count: infinite;
+	}
+}
+
+@keyframes loaderAnim {
+	0% {
+		transform: rotate(0);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
