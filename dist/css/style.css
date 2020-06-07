@@ -28,7 +28,7 @@ li {
 
 @media screen and (min-width: 1500px) {
   html {
-    font-size: 80%;
+    font-size: 90%;
   }
 }
 
@@ -161,7 +161,7 @@ header .form .input-group .search-bar {
   border-top-left-radius: 7px;
   border-bottom-left-radius: 7px;
   width: 40rem;
-  max-width: 40rem;
+  max-width: 50rem;
 }
 
 header .form .input-group .search-bar:focus {
@@ -176,6 +176,18 @@ header .form .input-group .button {
   height: inherit;
   border-top-right-radius: 7px;
   border-bottom-right-radius: 7px;
+}
+
+@media screen and (max-width: 768px) {
+  header .form .input-group .search-bar:focus {
+    border: 2px solid #007bff;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  header .form .input-group .search-bar:focus {
+    border: 1px solid #007bff;
+  }
 }
 
 .loader {
@@ -280,4 +292,33 @@ header .form .input-group .button {
 .search-results .result .movie-info .movie-release-year {
   font-size: 1.4rem;
   color: #aaaaaa;
+}
+
+@media screen and (max-width: 1000px) {
+  .search-results {
+    grid-template-columns: repeat(3, 25rem);
+  }
+  .search-results .result .result-image-container {
+    height: 35rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .search-results {
+    grid-template-columns: repeat(2, 25rem);
+    grid-gap: 5rem;
+  }
+  .search-results .result .result-image-container {
+    height: 35rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .search-results {
+    grid-template-columns: repeat(1, 30rem);
+    grid-gap: 5rem;
+  }
+  .search-results .result .result-image-container {
+    height: 40rem;
+  }
 }
