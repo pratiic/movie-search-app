@@ -17,7 +17,7 @@ let showResults = function (results) {
 	results.forEach((result) => {
 		elements.searchResults.innerHTML += `
 			<div class="result">
-				<div class="result-image-container">
+				<div class="result-image-container" title = "${result.Title}">
 					<img
 						src="${result.Poster}"
 						alt=""
@@ -33,4 +33,17 @@ let showResults = function (results) {
 			</div>
 		`;
 	});
+};
+
+export let searchMovieDetails = function (movie) {
+	fetch(`${url}t=${movie}`)
+		.then((response) => response.json())
+		.then((data) => {
+			showMovieDetails(data);
+		})
+		.catch((error) => console.log(error));
+};
+
+let showMovieDetails = function (data) {
+	console.log(data);
 };
