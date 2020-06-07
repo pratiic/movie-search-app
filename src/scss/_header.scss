@@ -1,0 +1,45 @@
+header {
+	.page-title {
+		font-family: $font-stack-tertiary;
+		letter-spacing: 5px;
+		margin: 3rem auto;
+	}
+
+	.form {
+		width: 100%;
+		@include flex(center, center);
+
+		.input-group {
+			@include flex(center, center);
+			height: 3.5rem;
+			font-weight: 700;
+
+			.search-bar {
+				height: inherit;
+				border: none;
+				outline: none;
+				padding: 0 1rem;
+				font-size: 1.5rem;
+				font-weight: inherit;
+				border-top-left-radius: 7px;
+				border-bottom-left-radius: 7px;
+				width: 40rem;
+				max-width: 40rem;
+
+				&:focus {
+					border: 3px solid $primary-blue;
+				}
+			}
+
+			.button {
+				outline: none;
+				border: none;
+				background-color: $primary-blue;
+				color: white;
+				height: inherit;
+				border-top-right-radius: 7px;
+				border-bottom-right-radius: 7px;
+			}
+		}
+	}
+}
