@@ -1,0 +1,57 @@
+.movie-details {
+	max-width: 70%;
+	margin: auto;
+	overflow-x: hidden;
+	padding: 1.5rem;
+	margin-bottom: 3rem;
+
+	.movie-poster-details-main {
+		@include flex(center, flex-start);
+
+		.poster {
+			height: 40rem;
+			width: 35rem;
+			box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, 0.5);
+			cursor: pointer;
+			margin-right: 5rem;
+
+			img {
+				height: 100%;
+				width: 100%;
+				border-radius: 5px;
+			}
+		}
+
+		.movie-details-main {
+			.rating {
+				@include flex(flex-start, center);
+
+				img {
+					margin-right: 1rem;
+				}
+			}
+		}
+	}
+
+	.plot {
+		h1 {
+			letter-spacing: 3px;
+		}
+
+		p {
+			line-height: 1.35;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.movie-details {
+		.movie-poster-details-main {
+			flex-direction: column;
+
+			.poster {
+				margin-bottom: 3rem;
+			}
+		}
+	}
+}

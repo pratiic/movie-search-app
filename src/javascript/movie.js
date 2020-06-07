@@ -12,8 +12,8 @@ export let searchMovie = function (searchTerm) {
 };
 
 let showResults = function (results) {
-	console.log(results);
-	elements.searchResults.innerHTML = "";
+	resetSearchResults();
+
 	results.forEach((result) => {
 		elements.searchResults.innerHTML += `
 			<div class="result">
@@ -45,5 +45,63 @@ export let searchMovieDetails = function (movie) {
 };
 
 let showMovieDetails = function (data) {
-	console.log(data);
+	resetMovieDetails();
+
+	elements.movieDetails.innerHTML = `
+		<div class="movie-poster-details-main mb-5">
+			<div class="poster">
+				<img
+					src="${data.Poster}"
+					alt=""
+				/>
+			</div>
+
+			<div class="movie-details-main">
+				<h1 class="movie-title capitalize text-large">
+					${data.Title}
+				</h1>
+				<h3 class="movie-release-year text-medium">1994</h3>
+				<h4 class="movie-genre capitalize text-small mb-2">
+					${data.Genre}
+				</h4>
+				<p class="actors text-small mb-1">
+					${data.Actors}
+				</p>
+
+				<p class="director text-small capitalize mb-1">
+					directed by ${data.Director}
+				</p>
+
+				<div class="rating">
+					<img
+						src="assets/images/imdb.svg"
+						class="imdb-image"
+						alt=""
+					/>
+					<span class="text-small">${data.Ratings[0].Value}</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="plot">
+			<h1 class="uppercase text-medium mb-1">plot</h1>
+			<p class="plot text-small">
+				${data.Plot}
+			</p>
+		</div>
+	`;
+};
+
+let resetSearchResults = function () {
+	elements.searchResults.style.display = "grid";
+	elements.searchResults.innerHTML = "";
+	elements.movieDetails.innerHTML = "";
+	elements.movieDetails.style.display = "none";
+};
+
+let resetMovieDetails = function () {
+	elements.searchResults.innerHTML = "";
+	elements.searchResults.style.display = "none";
+	elements.movieDetails.style.display = "block";
+	elements.movieDetails.innerHTML = "";
 };
