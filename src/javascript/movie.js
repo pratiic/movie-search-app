@@ -1,6 +1,6 @@
 import { elements } from "./elements.js";
 
-let url = `http://www.omdbapi.com/?apikey=aa4ef6f8&`;
+let url = `https://www.omdbapi.com/?apikey=aa4ef6f8&`;
 
 export let searchMovie = function (searchTerm) {
 	fetch(`${url}s=${searchTerm}`)
