@@ -6,6 +6,10 @@ export let searchMovie = function (searchTerm) {
 	fetch(`${url}s=${searchTerm}`)
 		.then((response) => response.json())
 		.then((data) => {
+			if (!data.Resonponse) {
+				showAlert(data.Error);
+			}
+
 			showResults(data.Search);
 		})
 		.catch((error) => console.log(error));
@@ -104,4 +108,13 @@ let resetMovieDetails = function () {
 	elements.searchResults.style.display = "none";
 	elements.movieDetails.style.display = "block";
 	elements.movieDetails.innerHTML = "";
+};
+
+let showAlert = function (message) {
+	elements.alert.innerText = message;
+	elements.alert.classList.add("show");
+
+	setTimeout(() => {
+		elements.alert.classList.remove("show");
+	}, 1500);
 };

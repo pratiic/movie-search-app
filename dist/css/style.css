@@ -392,3 +392,20 @@ header .form .input-group .button {
     margin-bottom: 3rem;
   }
 }
+
+.alert {
+  background-color: rgba(255, 0, 0, 0.514);
+  font-weight: 700;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0.3rem 2rem;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -5rem;
+  transition: transform 250ms ease-in;
+}
+
+.alert.show {
+  transform: translate(-50%, 5rem);
+}
